@@ -1,0 +1,38 @@
+body {
+  margin: 0%;
+  padding: 1rem;
+}
+
+header {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+
+button {
+  margin: 0;
+  padding: 1rem;
+  border-style: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 50ms ease-in-out;
+}
+button:hover {
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+input[type='search'] {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.validation-failed {
+  border: 1px solid #ec5252;
+  outline: 0 none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(236, 82, 82, 0.6);
+}
