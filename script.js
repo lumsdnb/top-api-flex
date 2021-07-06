@@ -1,7 +1,10 @@
+const API_KEY = '';
+
 const img = document.querySelector('img');
 const randomButton = document.querySelector('.random-button');
 const textInput = document.querySelector('[type=search]');
 const searchButton = document.querySelector('.search-button');
+const errorEl = document.createElement('h2');
 
 function fetchRandom() {
   fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=cats`, {
@@ -12,6 +15,12 @@ function fetchRandom() {
     })
     .then(function (response) {
       img.src = response.data.images.original.url;
+    })
+    .catch((error) => {
+      errorEl.textContent = error;
+      img.src = '#';
+      img.alt = 'nothing found...';
+      img.parentElement.prepend(errorEl);
     });
 }
 
@@ -27,6 +36,12 @@ function fetchSpecific(input) {
     })
     .then(function (response) {
       img.src = response.data.images.original.url;
+    })
+    .catch((error) => {
+      errorEl.textContent = error;
+      img.parentElement.prepend(errorEl);
+      img.src = '#';
+      img.alt = 'nothing found...';
     });
 }
 
